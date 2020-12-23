@@ -6,7 +6,7 @@
     <title>Testing Docker</title>
 </head>
 <body>
-    <h1>Hola mundo</h2>
+    <h1>Hola mundo</h1>
     <?php phpinfo(); ?>
 </body>
 </html>
