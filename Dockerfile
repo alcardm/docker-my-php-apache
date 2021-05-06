@@ -23,7 +23,10 @@ RUN set -ex; \
     libzip-dev \
     ; \
     \
-    docker-php-ext-configure gd --with-freetype --with-jpeg; \
+    docker-php-ext-configure gd \
+    --with-freetype \
+    --with-jpeg \
+    ; \
     docker-php-ext-install -j "$(nproc)" \
     bcmath \
     exif \
@@ -33,6 +36,7 @@ RUN set -ex; \
     ; \
     pecl install imagick-3.4.4; \
     docker-php-ext-enable imagick; \
+    rm -r /tmp/pear; \
     \
     apt-mark auto '.*' > /dev/null; \
     apt-mark manual $savedAptMark; \
